@@ -1,0 +1,4 @@
+AccountName,IssueType,Description,ExpectedPriority
+Acme Corp,Technical,urgent server failure and portal is not working,High
+Beta Ltd,Technical,application is slow and there is a delay,Medium
+Gamma Pvt Ltd,General,request for general information,Low

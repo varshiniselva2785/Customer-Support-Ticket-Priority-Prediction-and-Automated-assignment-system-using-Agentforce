@@ -1,0 +1,29 @@
+{
+  "name": "Support Ticket Priority Analysis",
+  "apiName": "Support_Ticket_Priority_Analysis",
+  "classificationDescription": "Analyzes customer support tickets to determine priority based on issue description and urgency.",
+  "scope": "Analyze support ticket descriptions, determine High/Medium/Low priority, and trigger backend automation for task assignment. Do not handle unrelated billing, subscription, or account-update requests.",
+  "instructions": [
+    "Ask for Account Name if it is not provided.",
+    "Retrieve the latest support ticket associated with the Account.",
+    "Read and analyze the ticket description.",
+    "High priority when description contains: urgent, not working, failure.",
+    "Medium priority when description contains: issue, slow, delay.",
+    "Low priority when none of the configured indicators are present.",
+    "For High priority, invoke the Auto-Launched Flow and ensure urgent handling is initiated.",
+    "Return priority, ticket ID, assigned support level, and action message.",
+    "Do not update records directly and do not send emails; use the Flow for actions."
+  ],
+  "action": {
+    "type": "Flow",
+    "flowApiName": "Support_Ticket_Intellegence",
+    "input": "varAccountName",
+    "outputs": [
+      "varAccountId",
+      "varTicketId",
+      "varPriorityLevel",
+      "varAssignedTo",
+      "varActionMessage"
+    ]
+  }
+}
